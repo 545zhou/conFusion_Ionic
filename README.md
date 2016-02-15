@@ -1,0 +1,1 @@
+This is a project that using Ionic to build a mobile app. 
