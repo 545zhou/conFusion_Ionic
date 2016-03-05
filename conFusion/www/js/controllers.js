@@ -63,9 +63,16 @@ angular.module('conFusion.controllers', [])
 
         };
 
+        var pickOptions = {
+        	maximumImagesCount: 1,
+		    width: 100,
+		    height: 100,
+		    quality: 80
+        };
+
         $scope.getPicture = function(){
-          	$cordovaImagePicker.getPictures(options).then(function(imageData) {
-                $scope.registration.imgSrc = "data:image/jpeg;base64," + imageData;
+          	$cordovaImagePicker.getPictures(pickOptions).then(function(imageData) {
+                $scope.registration.imgSrc = imageData[0];
             }, function(err) {
                 console.log(err);
             });
